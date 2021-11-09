@@ -5,6 +5,7 @@ import java.util.Objects;
 public class Inch {
     private double value;
 
+
     public Inch(double value) {
         this.value = value;
     }
@@ -17,4 +18,9 @@ public class Inch {
         return Double.compare(inch.value, value) == 0;
     }
 
+    public boolean lengthComparison(double in, int ft) {
+        ft = ft * 12;
+        return ft == in;
+
+    }
 }

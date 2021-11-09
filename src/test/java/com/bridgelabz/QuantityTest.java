@@ -1,6 +1,7 @@
 package com.bridgelabz;
 
 import org.junit.Assert;
+import org.junit.jupiter.api.*;
 import org.junit.Test;
 
 public class QuantityTest {
@@ -73,4 +74,5 @@ public class QuantityTest {
         Inch inch2 = new Inch(0);
         Assert.assertNotSame(inch1, inch2);
     }
+
 }
