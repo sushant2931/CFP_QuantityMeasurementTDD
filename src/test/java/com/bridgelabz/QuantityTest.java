@@ -132,11 +132,21 @@ public class QuantityTest {
     }
 
     @Test
-     public void given2InchAnd2Inch_WhenAdded_ShouldReturn4Inch() {
+    public void given2InchAnd2Inch_WhenAdded_ShouldReturn4Inch() {
         Length inch1 = new Length(Length.Unit.INCH, 2.0);
         Length inch2 = new Length(Length.Unit.INCH, 2.0);
         Length expectedSum = new Length(Length.Unit.INCH, 4.0);
         Length actualSum = inch1.sumOfLength(inch2);
         Assertions.assertEquals(expectedSum, actualSum);
     }
+
+    @Test
+    public void given1FeetAnd2Inch_WhenAdded_ShouldReturn14Inch() {
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        Length inch = new Length(Length.Unit.INCH, 2.0);
+        Length expectedSum = new Length(Length.Unit.INCH, 14.0);
+        Length actualSum = feet.sumOfLength(inch);
+        Assertions.assertEquals(expectedSum, actualSum);
+    }
+
 }
