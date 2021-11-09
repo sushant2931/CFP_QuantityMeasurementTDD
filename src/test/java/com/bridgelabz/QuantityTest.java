@@ -76,9 +76,12 @@ public class QuantityTest {
     }
 
     @Test
-    public void given0YardAnd0Yard_ShouldReturnEqual() {
-        Yard yard1 = new Yard(0);
-        Yard yard2 = new Yard(0);
-        Assertions.assertEquals(yard1, yard2);
+    public void given3FeetAnd1Yard_WhenCompared_ShouldReturnTrue() {
+        Length feet = new Length(Length.Unit.FEET, 3.0);
+        Length yard = new Length(Length.Unit.YARD, 1.0);
+        boolean compareCheck = feet.compare(yard);
+        Assertions.assertTrue(compareCheck);
     }
+
+
 }

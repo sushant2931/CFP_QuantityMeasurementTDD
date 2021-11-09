@@ -23,4 +23,6 @@ public class Feet {
         ft = 12 * ft;
         return ft == in;
     }
+
+
 }

@@ -1,7 +1,5 @@
 package com.bridgelabz;
 
-import java.util.Objects;
-
 public class Inch {
     private double value;
 
