@@ -1,7 +1,6 @@
 package com.bridgelabz;
 
 public class Length {
-    public enum Unit {FEET, YARD, CENTI_METER, INCH}
     private static final double INCH_TO_CM = 2.5;
     private static final double FEET_TO_INCH = 12.0;
     private static final double YARD_TO_FEET = 3.0;
@@ -11,6 +10,19 @@ public class Length {
     public Length(Unit unit, double value) {
         this.value = value;
         this.unit = unit;
+    }
+
+    public Length sumOfLength(Length that) {
+        double sumOfInput = 0.0;
+        if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.INCH))
+            sumOfInput = this.value + that.value;
+        else if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
+            sumOfInput = this.value * FEET_TO_INCH + that.value;
+        else if (this.unit.equals(Unit.FEET) && that.unit.equals(Unit.FEET))
+            sumOfInput = this.value * FEET_TO_INCH + that.value * FEET_TO_INCH;
+        else if (this.unit.equals(Unit.INCH) && that.unit.equals(Unit.CENTI_METER))
+            sumOfInput = this.value + that.value / INCH_TO_CM;
+        return new Length(Unit.INCH, sumOfInput);
     }
 
     public boolean compare(Length that) {
@@ -42,5 +54,7 @@ public class Length {
         Length length = (Length) that;
         return Double.compare(length.value, value) == 0 && unit == length.unit;
     }
+
+    public enum Unit {FEET, YARD, CENTI_METER, INCH}
 
 }

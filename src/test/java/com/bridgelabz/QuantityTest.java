@@ -124,11 +124,19 @@ public class QuantityTest {
     }
 
     @Test
-     public void given2InchAnd5Cm_WhenCompared_ShouldReturnEqualLength() {
+    public void given2InchAnd5Cm_WhenCompared_ShouldReturnEqualLength() {
         Length inch = new Length(Length.Unit.INCH, 2.0);
         Length cm = new Length(Length.Unit.CENTI_METER, 5.0);
         boolean compareCheck = inch.compare(cm);
         Assertions.assertTrue(compareCheck);
     }
 
+    @Test
+     public void given2InchAnd2Inch_WhenAdded_ShouldReturn4Inch() {
+        Length inch1 = new Length(Length.Unit.INCH, 2.0);
+        Length inch2 = new Length(Length.Unit.INCH, 2.0);
+        Length expectedSum = new Length(Length.Unit.INCH, 4.0);
+        Length actualSum = inch1.sumOfLength(inch2);
+        Assertions.assertEquals(expectedSum, actualSum);
+    }
 }
