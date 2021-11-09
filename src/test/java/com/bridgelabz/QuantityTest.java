@@ -149,4 +149,12 @@ public class QuantityTest {
         Assertions.assertEquals(expectedSum, actualSum);
     }
 
+    @Test
+     public void given1FeetAnd1Feet_WhenAdded_ShouldReturn24Inch() {
+        Length feet1 = new Length(Length.Unit.FEET, 1.0);
+        Length feet2 = new Length(Length.Unit.FEET, 1.0);
+        Length expectedSum = new Length(Length.Unit.INCH, 24.0);
+        Length actualSum = feet1.sumOfLength(feet2);
+        Assertions.assertEquals(expectedSum, actualSum);
+    }
 }
