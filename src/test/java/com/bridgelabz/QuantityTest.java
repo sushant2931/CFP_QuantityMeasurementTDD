@@ -66,4 +66,11 @@ public class QuantityTest {
         boolean result = inch1 == inch1;
         Assert.assertTrue(result);
     }
+
+    @Test
+    public void given0Inchand0InchFromDifferentType_ShouldReturnNotEqual() {
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = new Inch(0);
+        Assert.assertNotSame(inch1, inch2);
+    }
 }
