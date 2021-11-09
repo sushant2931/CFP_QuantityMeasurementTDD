@@ -75,4 +75,10 @@ public class QuantityTest {
         Assert.assertNotSame(inch1, inch2);
     }
 
+    @Test
+    public void given0YardAnd0Yard_ShouldReturnEqual() {
+        Yard yard1 = new Yard(0);
+        Yard yard2 = new Yard(0);
+        Assertions.assertEquals(yard1, yard2);
+    }
 }
