@@ -59,4 +59,11 @@ public class QuantityTest {
         Inch inch2 = null;
         Assert.assertNotSame(inch1, inch2);
     }
+
+    @Test
+    public void givenInchandInchFromSameRef_WhenEqual_ShouldReturnTrue() {
+        Inch inch1 = new Inch(0);
+        boolean result = inch1 == inch1;
+        Assert.assertTrue(result);
+    }
 }
