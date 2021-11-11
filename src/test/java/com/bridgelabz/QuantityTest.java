@@ -224,4 +224,12 @@ public class QuantityTest {
         Assertions.assertTrue(compareCheck);
     }
 
+    @Test
+    public void given1GallonAnd1Liter_WhenCompared_ShouldReturnNotEqualVolume() {
+        Volume gallon = new Volume(Volume.Unit.GALLON, 1.0);
+        Volume liter = new Volume(Volume.Unit.LITER, 1.0);
+        boolean compareCheck = gallon.compare(liter);
+        Assertions.assertFalse(compareCheck);
+    }
+
 }
