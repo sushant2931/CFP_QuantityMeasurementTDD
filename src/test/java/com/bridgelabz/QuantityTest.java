@@ -328,4 +328,26 @@ public class QuantityTest {
         Assertions.assertEquals(temp1, temp2);
     }
 
+    @Test
+    public void given0FahrenheitAnd1Fahrenheit_ShouldReturnNotEqualTemperature() {
+        Temperature temp1 = new Temperature(Temperature.Unit.FAHRENHEIT, 0.0);
+        Temperature temp2 = new Temperature(Temperature.Unit.FAHRENHEIT, 1.0);
+        Assertions.assertNotEquals(temp1, temp2);
+    }
+
+    @Test
+    public void given0FahrenheitAndNull_ShouldReturnNotEqualTemperature() {
+        Temperature temp1 = new Temperature(Temperature.Unit.FAHRENHEIT, 0.0);
+        Temperature temp2 = null;
+        Assertions.assertNotEquals(temp1, temp2);
+    }
+
+    @Test
+    public void given0FahrenheitAnd0FahrenheitFromDiffRef_ShouldReturnNotEqualTemperature() {
+        Temperature temp1 = new Temperature(Temperature.Unit.FAHRENHEIT, 0.0);
+        Temperature temp2 = new Temperature(Temperature.Unit.FAHRENHEIT, 1.0);
+        Assertions.assertNotSame(temp1, temp2);
+    }
+
+
 }
