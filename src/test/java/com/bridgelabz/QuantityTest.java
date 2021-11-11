@@ -180,4 +180,18 @@ public class QuantityTest {
         Volume gallon2 = new Volume(Volume.Unit.GALLON, 2.0);
         Assertions.assertNotEquals(gallon1, gallon2);
     }
+
+    @Test
+    public void given1GallonAndNull_ShouldReturnNotEqualVolume() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 1.0);
+        Volume gallon2 = null;
+        Assertions.assertNotEquals(gallon1, gallon2);
+    }
+
+    @Test
+    public void given1GallonAnd1GallonFromDiffRef_ShouldReturnNotEqualVolume() {
+        Volume gallon1 = new Volume(Volume.Unit.GALLON, 1.0);
+        Volume gallon2 = new Volume(Volume.Unit.GALLON, 1.0);
+        Assertions.assertNotSame(gallon1, gallon2);
+    }
 }
