@@ -7,6 +7,7 @@ public class Length {
     private static final double YARD_TO_INCH = 36.0;
     public double value;
     public Unit unit;
+
     public Length(Unit unit, double value) {
         this.value = value;
         this.unit = unit;
