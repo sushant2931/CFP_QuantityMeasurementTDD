@@ -281,4 +281,19 @@ public class QuantityTest {
         Volume actualSum = liter.sumOfVolume(ml);
         Assertions.assertEquals(expectedSum, actualSum);
     }
+
+    @Test
+    public void given0GramAnd0Gram_ShouldReturnEqualWeight() {
+        Weight gram1 = new Weight(Weight.Unit.GRAM, 0.0);
+        Weight gram2 = new Weight(Weight.Unit.GRAM, 0.0);
+        Assertions.assertEquals(gram1, gram2);
+    }
+
+    @Test
+    public void given0GramAnd1Gram_ShouldReturnNotEqualWeight() {
+        Weight gram1 = new Weight(Weight.Unit.GRAM, 0.0);
+        Weight gram2 = new Weight(Weight.Unit.GRAM, 1.0);
+        Assertions.assertNotEquals(gram1, gram2);
+    }
+
 }
