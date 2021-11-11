@@ -18,5 +18,5 @@ public class Volume {
 
     }
 
-    enum Unit {GALLON, MILLI_LITER, LITER}
+
 }
